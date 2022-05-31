@@ -1,0 +1,12 @@
+2022-03-07 09:45:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CUSTOMERS" not found; SQL statement:
+insert into customers (id, address, name, phone_number) values (default, ?, ?, ?) [42102-200]
+2022-03-07 09:50:18 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROPTABLE[*] TEST"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
+dropTABLE TEST [42001-200]
+2022-03-07 09:50:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "ADDRESS VARCHAR(20)": "'Calle 48 J Bis D Sur # 5 -54' (28)"; SQL statement:
+insert into customers (id, address, name, phone_number) values (default, ?, ?, ?) [22001-200]
+2022-03-07 09:53:13 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TALBE[*] CUSTOMERS ALTER COLUMN ADDRESS VARCHAR(40)"; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW"; SQL statement:
+alter talbe customers alter column address varchar(40) [42001-200]

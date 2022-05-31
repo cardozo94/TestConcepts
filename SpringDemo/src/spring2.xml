@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- To qualifer tag -->
+<!--DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd"-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<!-- Annotations-->
+	<!--bean id="triangle" class="org.camcar.springtutorial.annotations.Triangle">
+		<property name="pointA" ref="pointA"></property>
+		<property name="pointB" ref="pointB"></property>
+		<property name="pointC" ref="pointC"></property>
+	</bean-->
+	<bean id="pointA" class="org.camcar.springtutorial.annotations.Point">
+		<qualifier value="circleRelated"></qualifier>
+		<property name = "x" value = "0"></property>
+		<property name = "y" value = "0"></property>
+	</bean>
+	<bean id="pointB" class="org.camcar.springtutorial.annotations.Point">
+		<property name = "x" value = "-20"></property>
+		<property name = "y" value = "0"></property>
+	</bean>
+	<bean id="pointC" class="org.camcar.springtutorial.annotations.Point">
+		<property name = "x" value = "0"></property>
+		<property name = "y" value = "20"></property>
+	</bean>
+	
+	<bean id="center" class="org.camcar.springtutorial.annotations.Point">
+		<property name = "x" value = "4"></property>
+		<property name = "y" value = "10"></property>
+	</bean>
+	<!-- @Component -->
+	<!--bean id="circle" class="org.camcar.springtutorial.annotations.Circle">	
+	</bean-->
+	<!-- @Required annotation -->
+	<!--bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean-->
+	<!-- @Autowired annotation -->
+	<!-- bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean-->
+	<!-- messageSource -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages</value>
+			</list>
+		</property>
+	</bean>
+	<context:annotation-config></context:annotation-config>
+	<!-- To use component annotation -->
+	<context:component-scan base-package="org.camcar.springtutorial.annotations"></context:component-scan>
+	
+	
+</beans>
